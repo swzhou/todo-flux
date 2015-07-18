@@ -1,0 +1,32 @@
+{
+    "name": "todo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "js/app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "watchify -o js/bundle.js -v -d js/components/TodoIndex.jsx",
+        "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js"
+    },
+    "browserify": {
+        "transform": [
+            "reactify",
+            "envify"
+        ]
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "react": ">0.0.0",
+        "flux": ">0.0.0",
+        "object-assign": ">0.0.0",
+        "events": ">0.0.0"
+    },
+    "devDependencies": {
+        "browserify": ">0.0.0",
+        "envify": ">0.0.0",
+        "reactify": ">0.0.0",
+        "uglify-js": ">0.0.0",
+        "watchify": ">0.0.0"
+    }
+}
